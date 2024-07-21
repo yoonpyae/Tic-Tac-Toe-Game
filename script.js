@@ -2,6 +2,16 @@ let boxes = document.querySelectorAll(".box");
 let turn = "X";
 let isGameOver = false;
 
+function updateTurnIndicator() {
+    if (turn === "X") {
+      document.getElementById("turn-x").classList.add("active");
+      document.getElementById("turn-o").classList.remove("active");
+    } else {
+      document.getElementById("turn-x").classList.remove("active");
+      document.getElementById("turn-o").classList.add("active");
+    }
+  }
+
 boxes.forEach(e => {
   e.innerHTML = "";
   e.addEventListener("click", () => {
@@ -15,15 +25,8 @@ boxes.forEach(e => {
 });
 
 function changeTurn() {
-    if (turn === "X") {
-      turn = "O";
-      document.querySelectorAll(".background")[0].style.opacity = "1";
-      document.querySelectorAll(".background")[1].style.opacity = "0";
-    } else {
-      turn = "X";
-      document.querySelectorAll(".background")[0].style.opacity = "0";
-      document.querySelectorAll(".background")[1].style.opacity = "1";
-    }
+    turn = turn === "X" ? "O" : "X";
+    updateTurnIndicator();
   }
 
 function checkWin() {
