@@ -71,8 +71,7 @@ function checkDraw() {
 document.querySelector("#play-again").addEventListener("click", () => {
     isGameOver = false;
     turn = "X";
-    document.querySelectorAll(".background")[0].style.opacity = "1";
-    document.querySelectorAll(".background")[1].style.opacity = "0";
+    updateTurnIndicator();
     document.querySelector("#results").innerHTML = "";
     document.querySelector("#play-again").style.display = "none";
   
@@ -82,3 +81,6 @@ document.querySelector("#play-again").addEventListener("click", () => {
       e.style.color = "#fff";
     });
   });
+  
+  // Initialize the turn indicator
+  updateTurnIndicator();
