@@ -51,7 +51,7 @@ function checkWin() {
       document.querySelector("#play-again").style.display = "inline";
 
       for (j = 0; j < 3; j++) {
-        boxes[winContainer[i][j]].style.backgroundColor = "#08d9d6";
+        boxes[winContainer[i][j]].style.backgroundColor = "#00fbff";
         boxes[winContainer[i][j]].style.color = "#fff";
       }
     }
